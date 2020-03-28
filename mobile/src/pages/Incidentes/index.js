@@ -11,8 +11,8 @@ import styles from './style';
 
 
 export default function Incidents () {
-    const [incident, setIncident] = useState([]);
     const [total, setTotal] = useState(0);
+    const [incident, setIncident] = useState([]);
     const [page, setPage] = useState(1);
     const [loaging, setLoading] = useState(false);
     
@@ -41,7 +41,7 @@ export default function Incidents () {
         });
         
         setIncident([...incident, ...response.data]);
-        setTotal(response.headers['X-Total-Count']);
+        setTotal(response.headers['x-total-count']);
         setPage(page + 1);
 
         setLoading(false);
